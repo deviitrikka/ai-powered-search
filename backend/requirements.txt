@@ -2,8 +2,8 @@ fastapi==0.109.2
 uvicorn==0.27.1
 python-dotenv==1.0.1
 requests==2.31.0
-langchain-groq
-langchain-core==0.1.22
+langchain-groq=0.2.0
+langchain-core==0.3.11
 selenium==4.18.1
 webdriver-manager==4.0.1
 pydantic==2.9.2
