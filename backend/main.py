@@ -19,7 +19,7 @@ app = FastAPI()
 origins = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://yourfrontenddomain.com"
+    "https://ai-powered-search-iota.vercel.app"
 ]
 
 app.add_middleware(
@@ -134,6 +134,10 @@ async def get_jobs(query: str = Query(..., description="Job search query")):
         return {"jobs": jobs}  # Ensure the response key is "jobs"
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+     
+@app.get("/")
+async def welcome():
+    return {"message": "hi"}  # Return a dictionary (FastAPI converts it to JSON)
 
 # Run the FastAPI server
 if __name__ == "__main__":
